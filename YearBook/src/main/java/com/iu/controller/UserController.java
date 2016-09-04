@@ -22,7 +22,7 @@ import com.iu.service.UserService;
 @RestController
 @RequestMapping(value = "user")
 public class UserController {
-	
+	//second commit
 	@Autowired
 	private UserService userService;
 	
