@@ -1,0 +1,40 @@
+package com.iu.dao.impl;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.iu.dao.UserTokenDao;
+import com.iu.model.User;
+
+@Repository
+public class UserTokenDaoImpl implements UserTokenDao {
+
+	// veritabaný konfigürasyonu için oluþturulur.
+	@Autowired
+	private SessionFactory session;
+	
+	public UserTokenDaoImpl() {
+	}
+
+
+	@Override
+	public User save(User user) {
+		return (User) session.getCurrentSession().merge(user);
+	}
+
+
+	@Override
+	public User update(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public User delete(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

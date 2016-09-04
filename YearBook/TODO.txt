@@ -1,0 +1,7 @@
+1. Şifreler md5 e göre şifrelenip DB de tutulacak.
+	// a1b2c3 = md5("ahmet")
+	// e2r4t5 = md5("mehmet")
+	@Column(name = "PASSWORD")
+	private String	password;
+2. Login de kullanıcının girdiği değer md5 ile şifrelenip DB de kontrol edilir. Eşleşiyor ise doğrudur.
+3. 

@@ -1,0 +1,9 @@
+package com.iu.dao;
+
+import com.iu.model.User;
+
+public interface UserTokenDao {
+	public User save(User user);
+	public User update(User user);
+	public User delete(User user);
+}
