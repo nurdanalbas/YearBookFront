@@ -23,6 +23,7 @@ import com.iu.service.UserService;
 @RequestMapping(value = "user")
 public class UserController {
 	//second commit
+	//thirdcommit
 	@Autowired
 	private UserService userService;
 	
