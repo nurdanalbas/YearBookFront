@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Trying Page</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style>
+.h1 {
+	color: white;
+	background-color: #215C8F;
+	background-width: 100px;
+	background-height: 50px;
+}
+</style>
+</head>
+<body>
+
+	<h1 class="h1">first</h1>
+	<div ng-app="myApp" ng-controller="namesCtrl" ng-controller="myCtrl" ng-init="names=['Jani','Hege','Kai']" data-ng-init="quantity=1;price=5">
+		<p>Looping with ng-repeat:</p>
+		<h5>ng-init:names</h5>
+		<ul>
+			<li ng-repeat="x in names">{{ x }}</li>
+		</ul>
+
+		<h1 class="h1">second</h1>
+		<h2>Cost Calculator</h2>
+		<h5>ng-init:quantity,price</h5>
+
+		Quantity: <input type="number" ng-model="quantity"> Price: <input type="number" ng-model="price">
+
+		<p>
+			<b>Total in dollar:</b> {{quantity * price}}
+		</p>
+
+		<h1 class="h1">third</h1>
+		<h5>ng-controller:namesCtrl app:myApp //listede sadece e olanları getiriyor</h5>
+		<ul>
+			<li ng-repeat="x in names | filter : 'e'">{{ x }}</li>
+		</ul>
+
+		<h1 class="h1">fourth</h1>
+
+
+		<div ng-app="myApp" ng-controller="namesCtrl">
+			<table border="1" width="100%">
+				<tr>
+					<th ng-click="orderByMe('name')">Name</th>
+					<th ng-click="orderByMe('country')">Country</th>
+				</tr>
+				<tr ng-repeat="x in names | orderBy:myOrderBy">
+					<td>{{x.name}}</td>
+					<td>{{x.country}}</td>
+				</tr>
+			</table>
+		</div>
+
+		<div ng-app="myApp" ng-controller="myCtrl">
+     		<h1>Sixth</h1>
+			<p>The time is:</p>
+			<h1>{{theTime}}</h1>
+		</div>
+
+
+
+	</div>
+
+	<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $interval) {
+  $scope.theTime = new Date().toLocaleTimeString();
+  $interval(function () {
+      $scope.theTime = new Date().toLocaleTimeString();
+  }, 1000);
+});
+</script>
+
+
+	<script>
+   var app = angular.module('myApp', []);
+   app.controller('namesCtrl', function($scope) {
+    $scope.names = [
+        'Jani',
+        'Carl',
+        'Margareth',
+        'Hege',
+        'Joe',
+        'Gustav',
+        'Birgit',
+        'Mary',
+        'Kai'
+    ];
+});
+</script>
+
+
+	<script>
+     var app = angular.module('myApp', []);
+     app.controller('namesCtrl', function($scope) {
+    $scope.names = [
+        {name:'Jani',country:'Norway'},
+        {name:'Carl',country:'Sweden'},
+        {name:'Margareth',country:'England'},
+        {name:'Hege',country:'Norway'},
+        {name:'Joe',country:'Denmark'},
+        {name:'Gustav',country:'Sweden'},
+        {name:'Birgit',country:'Denmark'},
+        {name:'Mary',country:'England'},
+        {name:'Kai',country:'Norway'}
+        ];
+    $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+});
+     
+</script>
+
+</body>
+</html>
+
+
+

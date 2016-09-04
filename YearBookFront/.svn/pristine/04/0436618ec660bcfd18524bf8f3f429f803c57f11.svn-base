@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>FSMVU Graduated Record Page</title>
+
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="../js/userProfile.js"></script>
+<script src="../js/commentCont.js"></script>
+
+<style>
+body {
+	background: white;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #555;
+	text-align: left;
+}
+
+div.comments {
+	text-align: left;
+	background-color: blue;
+	color: white;
+	margin: 20px 0 20px 0;
+	padding: 20px;
+}
+</style>
+</head>
+<body ng-app="YearBook">
+
+	<div ng-controller="CommentController">
+		<div class="container">
+
+<!-- 			<div ng-controller="UserController"> -->
+
+				<form:form class="form-horizantal" role="form">
+
+					<div class="row" ng-init="getUser()" ng-init="getComment()">
+
+						<div class="col-md-4" id="first" style="background-color: white;">
+							<img alt="Logo" src="../img/FSM_Logo.png" height="200px;" width="200px;">
+						</div>
+
+						<div class="col-md-4" id="second" style="background-color: white;">
+
+							<br> <br> <br> <label>{{ user.username }}</label> <br> <br> <br> <label>{{user.userMail}}</label>
+
+						</div>
+
+						<div class="col-md-4" id="third" style="background-color: white;">
+
+							<br> <br> <br> <label>{{user.usersurname}}</label> <br> <br> <br> <a href="../pages/editProfile.html"><input type="button"
+								class="btn btn-info btn-sm" name="button2" id="button2" value="Edit My Profile" /></a>
+
+						</div>
+					</div>
+				</form:form>
+
+				<!-- 		</div> -->
+				<br> <br>
+
+
+				<form:form class="form-horizantal" role="form">
+					<div class="row">
+
+
+						<div class="col-md-9" id="third" style="background-color: white;">
+							<br>
+							<textarea rows="5" placeholder="Do Comment" ng-model="comment.description" class="form-control inputType"></textarea>
+							<br>
+
+						</div>
+
+						<div class="col-md-3" id="third" style="background-color: white;">
+							<br> <a href="#" class="btn btn-info btn-sm" ng-click="addComment()"> <span class="glyphicon glyphicon-edit"></span>Send         
+								<br> <a href="#" class="btn btn-info btn-sm" ng-click="getAllUserComments()"> <span class="glyphicon glyphicon-edit"></span>GetList
+							</a> <br>
+						</div>
+
+
+
+					</div>
+					<div class="row">
+						<div class="comments">
+							<p>comment comment</p>
+						</div>
+					</div>
+				</form:form>
+
+				<!-- 		</div> -->
+
+			</div>
+		</div>
+</body>
+</html>

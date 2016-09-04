@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Search Page</title>
+
+<link rel='stylesheet'
+	href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+
+<style>
+body {
+	background: white;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #555;
+	text-align: left;
+}
+
+table {
+	border-collapse: inherit;
+	background-color: white;
+	align: right;
+	line-height: 3px;
+}
+
+th, td {
+	color: black;
+}
+
+.h1 {
+	color: white;
+	text-align: CENTER;
+	background-color: #215C8F;
+	background-width: 100px;
+	background-height: 50px;
+	font-size: 40px;
+}
+
+.create {
+	color: GREY;
+	font-size: 25PX;
+	text-decoration: underline;
+}
+
+.inputType {
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body ng-app="YearBook">
+
+	<div ng-controller="UserController">
+
+		<div class="container">
+
+
+			<h1 class="h1">Search Page</h1>
+
+			<form:form class="form-horizantal" action="student.do" method="POST"
+				commandName="student" role="form">
+
+				<div class="row">
+					<br> <br> <br>
+					<div class="col-md-6" id="first" style="background-color: white;">
+						<img alt="Logo" src="../img/FSM_Logo.png" height="250px;"
+							width="250px;"> <br>
+					</div>
+					<br> <br> <br>
+					<div class="col-md-3" id="second" style="background-color: white;">
+						<input type="text" placeholder="Name" ng-model="user.username"
+							class="form-control inputType"> <br>
+					</div>
+
+
+
+					<div class="col-md-3" id="third" style="background-color: white;">
+						<input type="text" placeholder="Surname"
+							ng-model="user.usersursname" class="form-control inputType">
+						<br>
+
+					</div>
+					<div class="col-md-3" id=fourth style="background-color: white;">
+						<input type="number" placeholder="Graduation Year"
+							ng-model="user.gradYear" class="form-control inputType">
+						<br>
+
+					</div>
+					<div class="col-md-3" id="fifth" style="background-color: white;">
+						<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle" type="button"
+								ng-model="user.department" data-toggle="dropdown"
+								aria-labelledby="dropdownMenuButton">
+								Department <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="#">Computer Engineering</a></li>
+								<li><a href="#">Department of Pyhsics</a></li>
+								<li><a href="#">Software Engineering</a></li>
+							</ul>
+						</div>
+						<br>
+						
+						<div class="col-md-3" id="sixth" style="background-color: white;">
+						<a href="#" ng-click=
+						"edit()" class="btn btn-success btn-md">
+							<span class="glyphicon glyphicon-search"></span> Search Friend
+						</a>
+
+<br>
+					</div>
+						
+					</div>
+
+					
+					<br> <br> <br> <br> <br>
+					<h2>Search Table</h2>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Firstname</th>
+								<th>Lastname</th>
+								<th>Department</th>
+							</tr>
+						</thead>
+
+					</table>
+					<br> <br> <br>
+
+				</div>
+		</div>
+	</div>
+
+	</form:form>
+	</div>
+	</div>
+
+
+	<script src="../js/edit.js"></script>
+<p></p>
+</body>
+</html>

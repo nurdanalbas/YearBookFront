@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>FSMVU Graduated Login Page</title>
+
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-cookies.min.js"></script>
+<script src="../js/login.js"></script>
+<style>
+body {
+	background: white;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #555;
+	text-align: left;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+
+table {
+	border-collapse: inherit;
+	background-color: red;
+	align: right;
+	line-height: 3px;
+}
+
+th, td {
+	color: black;
+}
+
+.h1 {
+	color: white;
+	text-align: left;
+	background-color: #215C8F;
+	background-width: 180%;
+	background-height: 50%;
+	font-size: 40px;
+}
+
+.create {
+	color: GREY;
+	font-size: 25PX;
+	text-decoration: underline;
+}
+
+.inputType {
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body ng-app="YearBook">
+	<div ng-controller="UserAngularController">
+		<div class="container">
+			<h1 class="h1">FSMVU</h1>
+
+			<form:form class="form-horizantal" role="form">
+				<div class="row">
+					<div class="col-md-3">&nbsp;</div>
+					<div class="col-md-6" id="second" style="background-color: white;">
+						<input type="text" placeholder="Enter Mail Address" class="form-control inputType" ng-model="user.userMail"> <br>
+					</div>
+					<br>
+					<div class="col-md-3">&nbsp;</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-3">&nbsp;</div>
+					<div class="col-md-6" id="second" style="background-color: white;">
+						<br> <br> <input type="password" placeholder="Enter Password" class="form-control inputType" ng-model="user.password"> <br>
+					</div>
+					<div class="col-md-3">&nbsp;</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-5">&nbsp;</div>
+					<div class="col-md-4" id="second" style="background-color: white;">
+						<br> <a href="#" class="btn btn-success btn-lg" ng-click="login()"> <span class="glyphicon glyphicon-record"></span>Login
+						</a> <br>
+					</div>
+					<div class="col-md-3">&nbsp;</div>
+				</div>
+			</form:form>
+		</div>
+	</div>
+
+</body>
+</html>

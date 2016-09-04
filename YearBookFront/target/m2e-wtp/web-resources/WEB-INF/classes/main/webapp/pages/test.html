@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="../js/test.js"></script>
+<body ng-app="myApp">
+
+	<div ng-controller="userController">
+		Username: <input type="text" ng-model="username"><br>
+		userMail: <input type="text" ng-model="userMail"><br> <br>
+		<button ng-click="addUser()">Add</button>
+		<button ng-click="getList()">Get List</button>
+
+		<br /> Full Name: {{fullName()}}
+
+		<table border="1">
+			<tr ng-repeat="user in userList">
+				<td>{{ user.username }}</td>
+				<td>{{ user.userMail }}</td>
+			</tr>
+		</table>
+	</div>
+
+
+</body>
+</html>

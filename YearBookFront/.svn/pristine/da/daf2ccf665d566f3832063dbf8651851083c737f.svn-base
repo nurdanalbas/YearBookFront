@@ -1,0 +1,6 @@
+var app = angular.module('YearBook', ['ngCookies']);
+app.controller('UserController', function($scope, $http, $cookies) {
+	$cookies.put('YearBookToken', "asdasdasdasd");
+	$scope.myCookieVal = $cookies.get('YearBookToken');
+	console.log("$scope.myCookieVal:  "+$scope.myCookieVal)
+});
