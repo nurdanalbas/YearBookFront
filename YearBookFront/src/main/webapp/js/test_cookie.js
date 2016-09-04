@@ -4,3 +4,6 @@ app.controller('TestCookieController', function($scope, $http, $cookies) {
 	$scope.myCookieVal = $cookies.get('YearBookToken');
 	console.log("$scope.myCookieVal:  "+$scope.myCookieVal)
 });
+
+
+//dslkdlskdslkdslkdsldsl
